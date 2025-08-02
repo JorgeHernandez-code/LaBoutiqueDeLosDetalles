@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Boutique de los Detalles</title>
+  <link rel="icon" href="assets/img/logos/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <a href="#inicio" class="logo-link">
+        <img src="assets/img/logos/Logo.png" alt="Logo Boutique" class="logo-img">
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav id="mainMenu">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="inicio" class="banner">
+    <div class="slider">
+      <div class="slide active">
+        <img src="assets/img/banner/Banner2.png" alt="Bienvenida">
+        <div class="banner-overlay">
+          <h2>Regalos que enamoran, detalles que inspiran</h2>
+          <a href="https://wa.me/573237444519" target="_blank" class="banner-btn">Contáctanos por WhatsApp</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="assets/img/banner/Banner3.png" alt="Boutique Logo Dorado">
+      </div>
+    </div>
+  </section>
+
+
+  <main class="main-content">
+    <section id="productos" class="service-section" data-animate>
+      <h2 class="section-title">Nuestros Productos</h2>
+      <div class="product-grid">
+
+        <!-- Arreglos florales -->
+        <div class="product-card">
+          <div class="product-slider">
+            <img src="assets/img/arreglos_florales/arreglo1.png" class="active">
+            <img src="assets/img/arreglos_florales/arreglo2.png">
+            <img src="assets/img/arreglos_florales/arreglo3.png">
+          </div>
+          <p>Arreglos Florales</p>
+        </div>
+
+        <!-- Anchetas -->
+        <div class="product-card">
+          <div class="product-slider">
+            <img src="assets/img/anchetas/ancheta1.png" class="active">
+            <img src="assets/img/anchetas/ancheta2.jpg">
+            <img src="assets/img/anchetas/ancheta3.jpg">
+          </div>
+          <p>Anchetas Personalizadas</p>
+        </div>
+
+        <!-- Rosas Eternas -->
+        <div class="product-card">
+          <div class="product-slider">
+            <img src="assets/img/rosas_eternas/rosa1.jpeg" class="active">
+            <img src="assets/img/rosas_eternas/rosa2.jpeg">
+          </div>
+          <p>Rosas Inmortalizadas</p>
+        </div>
+
+        <!-- Peluches -->
+        <div class="product-card">
+          <div class="product-slider">
+            <img src="assets/img/peluches/peluche1.png" class="active">
+            <img src="assets/img/peluches/peluche2.jpeg">
+            <img src="assets/img/peluches/peluche3.png">
+          </div>
+          <p>Peluches</p>
+        </div>
+
+        <!-- Peluches de Foami -->
+        <div class="product-card">
+          <div class="product-slider">
+            <img src="assets/img/peluches_foami/caja1.jpg" class="active">
+            <img src="assets/img/peluches_foami/caja2.jpg">
+            <img src="assets/img/peluches_foami/caja3.jpg">
+          </div>
+          <p>Peluches de Foami</p>
+        </div>
+
+        <!-- Extra: Insumos para Detalles -->
+        <div class="product-card extra-card" onclick="abrirModal()">
+          <img src="assets/img/detalles/IMG-20250725-WA0242.jpg" alt="Insumos" class="single-img">
+          <p>También vendemos cajas, papel regalo y más...</p>
+        </div>
+
+        <div id="modalInsumos" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h3>Insumos para tus creaciones</h3>
+            <p>Vendemos cajas, papel de regalo, cintas decorativas, papel celofán, moños y más materiales para armar tus
+              propios arreglos personalizados.</p>
+            <img src="assets/img/insumos.png" alt="Insumos" style="width:100%; border-radius: 10px;">
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <section id="contacto" class="contact-section" data-animate>
+      <h2>Contáctanos</h2>
+      <p><strong>Teléfono:</strong> <a href="https://wa.me/573237444519" target="_blank">+57 318 3071536</a></p>
+      <p><strong>Email:</strong> <a
+          href="mailto:laboutiquedelosdetallesinfo@gmail.com">laboutiquedelosdetallesinfo@gmail.com</a></p>
+      <p><strong>Dirección:</strong> Calle 66 78L 15 sur, Bosa San Pablo, Bogotá</p>
+
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=Calle+66+78L+15+sur,+Bosa+San+Pablo,+Bogotá&output=embed"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+          <img src="../assets/img/logos/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+          <img src="../assets/img/logos/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" class="social-icon">
+          <img src="../assets/img/logos/tiktok.png" alt="TikTok">
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 La Boutique de los Detalles. Todos los derechos reservados.</p>
+  </footer>
+  <a href="https://wa.me/573237444519" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
+    <img src="../assets/img/logos/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <!-- Modal de imagen -->
+  <div id="modalImagen" class="modal-img">
+    <span class="close" onclick="cerrarModalImagen()">&times;</span>
+    <div class="modal-img-content">
+      <button class="modal-nav prev" onclick="cambiarImagen(-1)">&#10094;</button>
+      <img id="imagenModal" src="" alt="Producto ampliado">
+      <button class="modal-nav next" onclick="cambiarImagen(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+
+</html>
