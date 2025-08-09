@@ -1,7 +1,9 @@
-/* ===== Splash con efecto de escritura ===== */
-document.body.classList.add('splash-lock');
+/* ===== Splash con efecto de escritura (solo si existe #splash) ===== */
+const hasSplash = !!document.getElementById('splash');
+if (hasSplash) document.body.classList.add('splash-lock');
 
 window.addEventListener('load', () => {
+  if (!hasSplash) return;               // <- nada de splash en catálogo
   const splash = document.getElementById('splash');
   const line = document.getElementById('splashLine');
 
@@ -25,6 +27,13 @@ window.addEventListener('load', () => {
     else { setTimeout(() => { splash.classList.add('hide'); document.body.classList.remove('splash-lock'); }, 400); }
   })();
 });
+
+/* Por si llegas a esta página desde otra con el modal abierto o con splash-lock */
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('modal-open');
+  if (!hasSplash) document.body.classList.remove('splash-lock');
+});
+
 
 /* ===== Página ===== */
 document.addEventListener('DOMContentLoaded', () => {
