@@ -834,8 +834,3 @@ body.splash-lock {
   mix-blend-mode: multiply;
 }
 
-/* En la vista ampliada también podemos marcar agua si quieres */
-.modal-img.show #imagenModal {
-  /* Si quieres watermark en el modal: usa backdrop con CSS paint/canvas. 
-     Más simple: prepara las fotos ya marcadas o avísame y lo genero en canvas. */
-}
