@@ -5,19 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catálogo | La Boutique de los Detalles</title>
+
+    <!-- Base dinámico -->
     <script>
         (function () {
             var base = document.createElement('base');
             base.href = location.hostname.includes('github.io')
-                ? '/LaBoutiqueDeLosDetalles/'   // nombre del repo
+                ? '/LaBoutiqueDeLosDetalles/'
                 : '/';
             document.head.prepend(base);
         })();
     </script>
 
-    <link rel="icon" href="../assets/img/logos/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="assets/img/logos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 
@@ -25,22 +27,24 @@
     <!-- Splash Catálogo -->
     <div id="splashCatalogo" class="splash">
         <div class="splash-content">
-            <img src="../assets/img/logos/Logo.png" alt="Logo Boutique" class="splash-logo">
+            <img src="assets/img/logos/Logo.png" alt="Logo Boutique" class="splash-logo">
             <h2 id="splashText">Cargando catálogo...</h2>
         </div>
     </div>
-    <!-- Header (mismo de la home) -->
+
+    <!-- Header -->
     <header>
         <div class="navbar">
-            <a href="../index.html#inicio" class="logo-link">
-                <img src="../assets/img/logos/Logo.png" alt="Logo Boutique" class="logo-img">
+            <a href="index.html#inicio" class="logo-link">
+                <img src="assets/img/logos/Logo.png" alt="Logo Boutique" class="logo-img">
             </a>
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
             <nav id="mainMenu" aria-label="Principal">
                 <ul>
-                    <li><a href="../index.html#inicio">Inicio</a></li>
-                    <li><a href="../index.html#productos">Productos</a></li>
-                    <li><a href="../index.html#contacto">Contacto</a></li>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#productos">Productos</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="html/catalogo.html" class="is-active">Catálogo</a></li>
                 </ul>
             </nav>
         </div>
@@ -49,7 +53,7 @@
     <main class="main-content catalog">
         <h1 class="section-title reveal">Catálogo</h1>
 
-        <!-- Barra de filtros -->
+        <!-- Filtros -->
         <section class="catalog-filters" aria-label="Filtros del catálogo">
             <input id="catSearch" type="search" placeholder="Buscar por nombre..." autocomplete="off" />
             <select id="catFilter" aria-label="Filtrar por categoría">
@@ -63,31 +67,29 @@
             </select>
         </section>
 
-        <!-- Grid de catálogo -->
-        <section id="catalogGrid" class="catalog-grid" aria-live="polite">
-
-        </section>
+        <!-- Grid -->
+        <section id="catalogGrid" class="catalog-grid" aria-live="polite"></section>
     </main>
 
-    <!-- Síguenos (contadores) -->
+    <!-- Síguenos -->
     <section id="redes" class="social-stats" data-animate aria-label="Redes sociales">
         <h2 class="section-title reveal">Síguenos</h2>
         <div class="stats-grid">
             <a class="stat" href="https://www.facebook.com" target="_blank" rel="noopener" data-target="1200"
                 aria-label="Facebook">
-                <img src="../assets/img/logos/facebook.png" alt="">
+                <img src="assets/img/logos/facebook.png" alt="">
                 <span class="count">0</span>
                 <small>Facebook</small>
             </a>
             <a class="stat" href="https://www.instagram.com" target="_blank" rel="noopener" data-target="2750"
                 aria-label="Instagram">
-                <img src="../assets/img/logos/instagram.png" alt="">
+                <img src="assets/img/logos/instagram.png" alt="">
                 <span class="count">0</span>
                 <small>Instagram</small>
             </a>
             <a class="stat" href="https://www.tiktok.com" target="_blank" rel="noopener" data-target="980"
                 aria-label="TikTok">
-                <img src="../assets/img/logos/tiktok.png" alt="">
+                <img src="assets/img/logos/tiktok.png" alt="">
                 <span class="count">0</span>
                 <small>TikTok</small>
             </a>
@@ -102,10 +104,10 @@
     <!-- WhatsApp flotante -->
     <a href="https://wa.me/573237444519" class="whatsapp-float" target="_blank" rel="noopener"
         title="Escríbenos por WhatsApp">
-        <img src="../assets/img/logos/whatsapp.png" alt="WhatsApp">
+        <img src="assets/img/logos/whatsapp.png" alt="WhatsApp">
     </a>
 
-    <!-- Modal de imagen (mismo de la home) -->
+    <!-- Modal -->
     <div id="modalImagen" class="modal-img" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
         <span class="close" onclick="cerrarModalImagen()" aria-label="Cerrar modal">&times;</span>
         <div class="modal-img-content">
@@ -115,33 +117,24 @@
         </div>
     </div>
 
-    <script src="../js/index.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- Splash catálogo (mensajes giratorios) -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const splash = document.getElementById("splashCatalogo");
             const splashText = document.getElementById("splashText");
-
             const textos = [
                 "Preparando los mejores detalles...",
                 "Agregando un toque de amor 💕",
                 "Revisando cada producto...",
                 "Listo para que elijas tu favorito 😍"
             ];
-
-            let index = 0;
-            const intervalo = setInterval(() => {
-                index = (index + 1) % textos.length;
-                splashText.textContent = textos[index];
-            }, 1500);
-
-            // Tiempo de splash (2.5 segundos)
-            setTimeout(() => {
-                splash.classList.add("fade-out");
-                clearInterval(intervalo);
-            }, 2500);
+            let i = 0;
+            const iv = setInterval(() => { i = (i + 1) % textos.length; splashText.textContent = textos[i]; }, 1500);
+            setTimeout(() => { splash.classList.add("fade-out"); clearInterval(iv); }, 2500);
         });
     </script>
-
 </body>
 
 </html>

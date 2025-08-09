@@ -1,9 +1,9 @@
-/* ===== Splash con efecto de escritura (solo si existe #splash) ===== */
+/* ===== Splash home (solo si existe #splash) ===== */
 const hasSplash = !!document.getElementById('splash');
 if (hasSplash) document.body.classList.add('splash-lock');
 
 window.addEventListener('load', () => {
-  if (!hasSplash) return;               // <- nada de splash en catálogo
+  if (!hasSplash) return;
   const splash = document.getElementById('splash');
   const line = document.getElementById('splashLine');
 
@@ -28,12 +28,11 @@ window.addEventListener('load', () => {
   })();
 });
 
-/* Por si llegas a esta página desde otra con el modal abierto o con splash-lock */
+/* Seguridad adicional al cargar cualquier página */
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.remove('modal-open');
   if (!hasSplash) document.body.classList.remove('splash-lock');
 });
-
 
 /* ===== Página ===== */
 document.addEventListener('DOMContentLoaded', () => {
@@ -69,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   }
 
-  /* Observer para .reveal (títulos y otros) */
+  /* Títulos reveal */
   const revObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -117,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     header.classList.toggle('shrink', window.scrollY > 50);
   });
 
-  /* Modal imagen */
+  /* Modal imagen (home) */
   let currentIndex = 0, currentSlider = [];
   document.querySelectorAll(".product-card").forEach(card => {
     card.addEventListener("click", () => {
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove("show");
     setTimeout(() => {
       modal.style.display = "none";
-      img.removeAttribute("src");         // evita que aparezca el alt en footer
+      img.removeAttribute("src");
       document.body.classList.remove('modal-open');
     }, 400);
   };
@@ -160,7 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById("modalImagen");
     if (e.target === modal) window.cerrarModalImagen();
   });
-  /* ===== Catálogo desde JSON ===== */
+
+  /* ===== Catálogo desde JSON (solo si existe #catalogGrid) ===== */
   const grid = document.getElementById('catalogGrid');
   if (grid) {
     const input = document.getElementById('catSearch');
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let productos = [];
     let cards = [];
 
-    fetch('/json/productos.json')
+    fetch('json/productos.json')   // <- sin "/" para funcionar con <base>
       .then(r => r.json())
       .then(data => {
         productos = data;
@@ -205,8 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
     input?.addEventListener('input', applyFilters);
     sel?.addEventListener('change', applyFilters);
 
-    // Lightbox usando el mismo modal
-    let currentIndex = 0;
+    // Lightbox desde catálogo
+    let catIndex = 0;
     function visibles() { return cards.filter(c => !c.classList.contains('hide')); }
 
     function hookClicks() {
@@ -214,43 +214,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = e.target.closest('.cat-card');
         if (!card) return;
         const id = card.getAttribute('data-id');
-        const lista = visibles();
-        // construyo lista de imágenes visibles (una por card)
-        window.__catalogImgs = lista.map(c => c.querySelector('img'));
-        currentIndex = lista.indexOf(card);
+        const list = visibles();
+        window.__catalogImgs = list.map(c => c.querySelector('img'));
+        catIndex = list.indexOf(card);
+
         const p = productos.find(x => x.id === id);
         if (p && p.imagenes && p.imagenes.length > 1) {
-          // si ese producto tiene varias imágenes, usa esas para navegar
-          window.__catalogImgs = p.imagenes.map(src => {
-            const tmp = new Image(); tmp.src = src; return tmp;
-          });
-          currentIndex = 0;
+          window.__catalogImgs = p.imagenes.map(src => { const im = new Image(); im.src = src; return im; });
+          catIndex = 0;
         }
-        mostrarImagenModal(window.__catalogImgs[currentIndex].src);
+        mostrarImagenModal(window.__catalogImgs[catIndex].src);
       });
     }
 
-    // Navegación del modal con la lista activa
     const oldCambiar = window.cambiarImagen;
     window.cambiarImagen = dir => {
       if (Array.isArray(window.__catalogImgs) && window.__catalogImgs.length) {
-        currentIndex = (currentIndex + dir + window.__catalogImgs.length) % window.__catalogImgs.length;
-        document.getElementById('imagenModal').src = window.__catalogImgs[currentIndex].src;
+        catIndex = (catIndex + dir + window.__catalogImgs.length) % window.__catalogImgs.length;
+        document.getElementById('imagenModal').src = window.__catalogImgs[catIndex].src;
       } else if (typeof oldCambiar === 'function') {
         oldCambiar(dir);
       }
     };
   }
-
 });
-
 /* Menú móvil */
 function toggleMenu() { document.getElementById("mainMenu").classList.toggle("show"); }
-
 /* (Opcional) Modal extra */
 function abrirModal() { const el = document.getElementById("modalInsumos"); if (el) el.style.display = "block"; }
 function cerrarModal() { const el = document.getElementById("modalInsumos"); if (el) el.style.display = "none"; }
-
 /* Desplazamiento suave con offset del header */
 const HEADER_OFFSET = 140;
 document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -263,8 +255,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     window.scrollTo({ top: y, behavior: 'smooth' });
   });
 });
-
-/* Contadores de redes */
+/* Contadores */
 function animateCount(el, target, duration = 1200) {
   const start = 0; const t0 = performance.now();
   function tick(now) {
@@ -279,8 +270,7 @@ const statsObs = new IntersectionObserver((entries, obs) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       const target = parseInt(e.target.getAttribute('data-target'), 10) || 0;
-      const counter = e.target.querySelector('.count');
-      animateCount(counter, target);
+      animateCount(e.target.querySelector('.count'), target);
       obs.unobserve(e.target);
     }
   });

@@ -1,40 +1,59 @@
 [
-  {
-    "id": "arr-001",
-    "titulo": "Arreglo con girasoles",
-    "categoria": "arreglos",
-    "imagenes": ["/assets/img/arreglos_florales/arreglo1.png"],
-    "tags": ["flores", "girasoles"]
-  },
-  {
-    "id": "anc-001",
-    "titulo": "Ancheta rosa",
-    "categoria": "anchetas",
-    "imagenes": ["/assets/img/anchetas/ancheta1.png"],
-    "tags": ["cumpleaños", "dulces"]
-  },
-  {
-    "id": "ros-001",
-    "titulo": "Rosa eterna morada",
-    "categoria": "rosas",
-    "imagenes": ["/assets/img/rosas_eternas/rosa1.jpeg", "assets/img/rosas_eternas/rosa2.jpeg"]
-  },
-  {
-    "id": "pel-001",
-    "titulo": "Peluche Stitch",
-    "categoria": "peluches",
-    "imagenes": ["/assets/img/peluches/peluche1.png"]
-  },
-  {
-    "id": "foa-001",
-    "titulo": "Peluche de foami panda",
-    "categoria": "foami",
-    "imagenes": ["/assets/img/peluches_foami/caja2.jpg"]
-  },
-  {
-    "id": "otr-001",
-    "titulo": "Cajas y papel regalo",
-    "categoria": "otros",
-    "imagenes": ["/assets/img/detalles/IMG-20250725-WA0242.jpg"]
-  }
+    {
+        "id": "arr-001",
+        "titulo": "Arreglo con girasoles",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo1.png"
+        ],
+        "tags": [
+            "flores",
+            "girasoles"
+        ]
+    },
+    {
+        "id": "anc-001",
+        "titulo": "Ancheta rosa",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta1.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "ros-001",
+        "titulo": "Rosa eterna morada",
+        "categoria": "rosas",
+        "imagenes": [
+            "assets/img/rosas_eternas/rosa1.jpeg",
+            "assets/img/rosas_eternas/rosa2.jpeg"
+        ]
+    },
+    {
+        "id": "pel-001",
+        "titulo": "Peluche Stitch",
+        "categoria": "peluches",
+        "imagenes": [
+            "assets/img/peluches/peluche1.png"
+        ]
+    },
+    {
+        "id": "foa-001",
+        "titulo": "Peluche de foami panda",
+        "categoria": "foami",
+        "imagenes": [
+            "assets/img/peluches_foami/caja2.jpg"
+        ]
+    },
+    {
+        "id": "otr-001",
+        "titulo": "Cajas y papel regalo",
+        "categoria": "otros",
+        "imagenes": [
+            "assets/img/detalles/IMG-20250725-WA0242.jpg"
+        ]
+    }
 ]
