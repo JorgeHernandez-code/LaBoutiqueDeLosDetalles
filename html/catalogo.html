@@ -13,7 +13,13 @@
 </head>
 
 <body>
-
+    <!-- Splash Catálogo -->
+    <div id="splashCatalogo" class="splash">
+        <div class="splash-content">
+            <img src="/assets/img/logos/Logo.png" alt="Logo Boutique" class="splash-logo">
+            <h2 id="splashText">Cargando catálogo...</h2>
+        </div>
+    </div>
     <!-- Header (mismo de la home) -->
     <header>
         <div class="navbar">
@@ -101,6 +107,32 @@
     </div>
 
     <script src="../js/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const splash = document.getElementById("splashCatalogo");
+            const splashText = document.getElementById("splashText");
+
+            const textos = [
+                "Preparando los mejores detalles...",
+                "Agregando un toque de amor 💕",
+                "Revisando cada producto...",
+                "Listo para que elijas tu favorito 😍"
+            ];
+
+            let index = 0;
+            const intervalo = setInterval(() => {
+                index = (index + 1) % textos.length;
+                splashText.textContent = textos[index];
+            }, 1500);
+
+            // Tiempo de splash (2.5 segundos)
+            setTimeout(() => {
+                splash.classList.add("fade-out");
+                clearInterval(intervalo);
+            }, 2500);
+        });
+    </script>
+
 </body>
 
 </html>
