@@ -5,20 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Boutique de los Detalles</title>
+
   <link rel="icon" href="assets/img/logos/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Splash -->
+  <div id="splash" aria-hidden="true">
+    <div class="splash-inner">
+      <img src="assets/img/logos/Logo.png" alt="" role="presentation">
+      <h1 id="splashLine"></h1>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header>
     <div class="navbar">
       <a href="#inicio" class="logo-link">
         <img src="assets/img/logos/Logo.png" alt="Logo Boutique" class="logo-img">
       </a>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <nav id="mainMenu">
+
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+
+      <nav id="mainMenu" aria-label="Principal">
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#productos">Productos</a></li>
@@ -27,33 +39,46 @@
       </nav>
     </div>
   </header>
-  <section id="inicio" class="banner">
+
+  <!-- Banner -->
+  <section id="inicio" class="banner" aria-label="Banner principal">
+    <!-- Slides -->
     <div class="slider">
-      <div class="slide active">
-        <img src="assets/img/banner/Banner2.png" alt="Bienvenida">
-        <div class="banner-overlay">
-          <h2>Regalos que enamoran, detalles que inspiran</h2>
-          <a href="https://wa.me/573237444519" target="_blank" class="banner-btn">Contáctanos por WhatsApp</a>
-        </div>
+      <div class="slide active"><img src="assets/img/banner/Banner2.png" alt="Bienvenida"></div>
+      <div class="slide"><img src="assets/img/banner/Banner3.png" alt="Boutique Logo Dorado"></div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="banner-overlay">
+      <h2>Detalles pensados para cada ocasión</h2>
+      <div class="banner-cta">
+        <a href="#productos" class="banner-btn">Ver Catálogo</a>
+        <a href="https://wa.me/573237444519" target="_blank" rel="noopener" class="banner-btn secondary">WhatsApp</a>
       </div>
-      <div class="slide">
-        <img src="assets/img/banner/Banner3.png" alt="Boutique Logo Dorado">
-      </div>
+    </div>
+
+    <!-- Curva inferior -->
+    <div class="curve curve-bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,50 C360,100 1080,0 1440,50" fill="none" stroke="#D4AF37" stroke-width="6" />
+        <path d="M0,50 C360,100 1080,0 1440,50 L1440,120 L0,120 Z" fill="#ffffff" />
+      </svg>
     </div>
   </section>
 
-
+  <!-- Main -->
   <main class="main-content">
-    <section id="productos" class="service-section" data-animate>
+    <!-- Productos -->
+    <section id="productos" class="service-section" data-animate aria-label="Nuestros productos">
       <h2 class="section-title">Nuestros Productos</h2>
-      <div class="product-grid">
 
+      <div class="product-grid">
         <!-- Arreglos florales -->
         <div class="product-card">
           <div class="product-slider">
-            <img src="assets/img/arreglos_florales/arreglo1.png" class="active">
-            <img src="assets/img/arreglos_florales/arreglo2.png">
-            <img src="assets/img/arreglos_florales/arreglo3.png">
+            <img src="assets/img/arreglos_florales/arreglo1.png" class="active" alt="Arreglo Floral 1">
+            <img src="assets/img/arreglos_florales/arreglo2.png" alt="Arreglo Floral 2">
+            <img src="assets/img/arreglos_florales/arreglo3.png" alt="Arreglo Floral 3">
           </div>
           <p>Arreglos Florales</p>
         </div>
@@ -61,18 +86,18 @@
         <!-- Anchetas -->
         <div class="product-card">
           <div class="product-slider">
-            <img src="assets/img/anchetas/ancheta1.png" class="active">
-            <img src="assets/img/anchetas/ancheta2.jpg">
-            <img src="assets/img/anchetas/ancheta3.jpg">
+            <img src="assets/img/anchetas/ancheta1.png" class="active" alt="Ancheta 1">
+            <img src="assets/img/anchetas/ancheta2.jpg" alt="Ancheta 2">
+            <img src="assets/img/anchetas/ancheta3.jpg" alt="Ancheta 3">
           </div>
           <p>Anchetas Personalizadas</p>
         </div>
 
-        <!-- Rosas Eternas -->
+        <!-- Rosas Inmortalizadas -->
         <div class="product-card">
           <div class="product-slider">
-            <img src="assets/img/rosas_eternas/rosa1.jpeg" class="active">
-            <img src="assets/img/rosas_eternas/rosa2.jpeg">
+            <img src="assets/img/rosas_eternas/rosa1.jpeg" class="active" alt="Rosa eterna 1">
+            <img src="assets/img/rosas_eternas/rosa2.jpeg" alt="Rosa eterna 2">
           </div>
           <p>Rosas Inmortalizadas</p>
         </div>
@@ -80,9 +105,9 @@
         <!-- Peluches -->
         <div class="product-card">
           <div class="product-slider">
-            <img src="assets/img/peluches/peluche1.png" class="active">
-            <img src="assets/img/peluches/peluche2.jpeg">
-            <img src="assets/img/peluches/peluche3.png">
+            <img src="assets/img/peluches/peluche1.png" class="active" alt="Peluche 1">
+            <img src="assets/img/peluches/peluche2.jpeg" alt="Peluche 2">
+            <img src="assets/img/peluches/peluche3.png" alt="Peluche 3">
           </div>
           <p>Peluches</p>
         </div>
@@ -90,37 +115,26 @@
         <!-- Peluches de Foami -->
         <div class="product-card">
           <div class="product-slider">
-            <img src="assets/img/peluches_foami/caja1.jpg" class="active">
-            <img src="assets/img/peluches_foami/caja2.jpg">
-            <img src="assets/img/peluches_foami/caja3.jpg">
+            <img src="assets/img/peluches_foami/caja1.jpg" class="active" alt="Foami 1">
+            <img src="assets/img/peluches_foami/caja2.jpg" alt="Foami 2">
+            <img src="assets/img/peluches_foami/caja3.jpg" alt="Foami 3">
           </div>
           <p>Peluches de Foami</p>
         </div>
 
-        <!-- Extra: Insumos para Detalles -->
+        <!-- Extra -->
         <div class="product-card extra-card" onclick="abrirModal()">
           <img src="assets/img/detalles/IMG-20250725-WA0242.jpg" alt="Insumos" class="single-img">
           <p>También vendemos cajas, papel regalo y más...</p>
         </div>
-
-        <div id="modalInsumos" class="modal">
-          <div class="modal-content">
-            <span class="close" onclick="cerrarModal()">&times;</span>
-            <h3>Insumos para tus creaciones</h3>
-            <p>Vendemos cajas, papel de regalo, cintas decorativas, papel celofán, moños y más materiales para armar tus
-              propios arreglos personalizados.</p>
-            <img src="assets/img/insumos.png" alt="Insumos" style="width:100%; border-radius: 10px;">
-          </div>
-        </div>
-
-
       </div>
     </section>
 
-
-    <section id="contacto" class="contact-section" data-animate>
+    <!-- Contacto -->
+    <section id="contacto" class="contact-section" data-animate aria-label="Contacto">
       <h2>Contáctanos</h2>
-      <p><strong>Teléfono:</strong> <a href="https://wa.me/573237444519" target="_blank">+57 318 3071536</a></p>
+      <p><strong>Teléfono:</strong> <a href="https://wa.me/573237444519" target="_blank" rel="noopener">+57 318
+          3071536</a></p>
       <p><strong>Email:</strong> <a
           href="mailto:laboutiquedelosdetallesinfo@gmail.com">laboutiquedelosdetallesinfo@gmail.com</a></p>
       <p><strong>Dirección:</strong> Calle 66 78L 15 sur, Bosa San Pablo, Bogotá</p>
@@ -128,39 +142,41 @@
       <div class="map-container">
         <iframe src="https://www.google.com/maps?q=Calle+66+78L+15+sur,+Bosa+San+Pablo,+Bogotá&output=embed"
           width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="social-links">
-        <a href="https://www.facebook.com" target="_blank" class="social-icon">
-          <img src="../assets/img/logos/facebook.png" alt="Facebook">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon" rel="noopener">
+          <img src="assets/img/logos/facebook.png" alt="Facebook">
         </a>
-        <a href="https://www.instagram.com" target="_blank" class="social-icon">
-          <img src="../assets/img/logos/instagram.png" alt="Instagram">
+        <a href="https://www.instagram.com" target="_blank" class="social-icon" rel="noopener">
+          <img src="assets/img/logos/instagram.png" alt="Instagram">
         </a>
-        <a href="https://www.tiktok.com" target="_blank" class="social-icon">
-          <img src="../assets/img/logos/tiktok.png" alt="TikTok">
+        <a href="https://www.tiktok.com" target="_blank" class="social-icon" rel="noopener">
+          <img src="assets/img/logos/tiktok.png" alt="TikTok">
         </a>
       </div>
     </section>
-
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 La Boutique de los Detalles. Todos los derechos reservados.</p>
   </footer>
-  <a href="https://wa.me/573237444519" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
-    <img src="../assets/img/logos/whatsapp.png" alt="WhatsApp">
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/573237444519" class="whatsapp-float" target="_blank" rel="noopener"
+    title="Escríbenos por WhatsApp">
+    <img src="assets/img/logos/whatsapp.png" alt="WhatsApp">
   </a>
 
   <!-- Modal de imagen -->
-  <div id="modalImagen" class="modal-img">
-    <span class="close" onclick="cerrarModalImagen()">&times;</span>
+  <div id="modalImagen" class="modal-img" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <span class="close" onclick="cerrarModalImagen()" aria-label="Cerrar modal">&times;</span>
     <div class="modal-img-content">
-      <button class="modal-nav prev" onclick="cambiarImagen(-1)">&#10094;</button>
+      <button class="modal-nav prev" onclick="cambiarImagen(-1)" aria-label="Anterior">&#10094;</button>
       <img id="imagenModal" src="" alt="Producto ampliado">
-      <button class="modal-nav next" onclick="cambiarImagen(1)">&#10095;</button>
+      <button class="modal-nav next" onclick="cambiarImagen(1)" aria-label="Siguiente">&#10095;</button>
     </div>
   </div>
 
