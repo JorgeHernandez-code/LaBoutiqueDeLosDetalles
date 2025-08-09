@@ -1,102 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo | La Boutique de los Detalles</title>
 
-  <link rel="icon" href="assets/img/logos/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo | La Boutique de los Detalles</title>
+
+    <link rel="icon" href="/assets/img/logos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Header (mismo de la home) -->
-  <header>
-    <div class="navbar">
-      <a href="index.html#inicio" class="logo-link">
-        <img src="/assets/img/logos/Logo.png" alt="Logo Boutique" class="logo-img">
-      </a>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
-      <nav id="mainMenu" aria-label="Principal">
-        <ul>
-          <li><a href="/index.html#inicio">Inicio</a></li>
-          <li><a href="/index.html#productos">Productos</a></li>
-          <li><a href="/index.html#contacto">Contacto</a></li>
-          <li><a href="/catalogo.html" class="is-active">Catálogo</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Header (mismo de la home) -->
+    <header>
+        <div class="navbar">
+            <a href="/index.html#inicio" class="logo-link">
+                <img src="/assets/img/logos/Logo.png" alt="Logo Boutique" class="logo-img">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+            <nav id="mainMenu" aria-label="Principal">
+                <ul>
+                    <li><a href="/index.html#inicio">Inicio</a></li>
+                    <li><a href="/index.html#productos">Productos</a></li>
+                    <li><a href="/index.html#contacto">Contacto</a></li>
+                    <li><a href="/catalogo.html" class="is-active">Catálogo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main class="main-content catalog">
-    <h1 class="section-title reveal">Catálogo</h1>
+    <main class="main-content catalog">
+        <h1 class="section-title reveal">Catálogo</h1>
 
-    <!-- Barra de filtros -->
-    <section class="catalog-filters" aria-label="Filtros del catálogo">
-      <input id="catSearch" type="search" placeholder="Buscar por nombre..." autocomplete="off" />
-      <select id="catFilter" aria-label="Filtrar por categoría">
-        <option value="todas">Todas las categorías</option>
-        <option value="arreglos">Arreglos florales</option>
-        <option value="anchetas">Anchetas</option>
-        <option value="rosas">Rosas inmortalizadas</option>
-        <option value="peluches">Peluches</option>
-        <option value="foami">Peluches de foami</option>
-        <option value="otros">Otros</option>
-      </select>
+        <!-- Barra de filtros -->
+        <section class="catalog-filters" aria-label="Filtros del catálogo">
+            <input id="catSearch" type="search" placeholder="Buscar por nombre..." autocomplete="off" />
+            <select id="catFilter" aria-label="Filtrar por categoría">
+                <option value="todas">Todas las categorías</option>
+                <option value="arreglos">Arreglos florales</option>
+                <option value="anchetas">Anchetas</option>
+                <option value="rosas">Rosas inmortalizadas</option>
+                <option value="peluches">Peluches</option>
+                <option value="foami">Peluches de foami</option>
+                <option value="otros">Otros</option>
+            </select>
+        </section>
+
+        <!-- Grid de catálogo -->
+        <section id="catalogGrid" class="catalog-grid" aria-live="polite">
+
+        </section>
+    </main>
+
+    <!-- Síguenos (contadores) -->
+    <section id="redes" class="social-stats" data-animate aria-label="Redes sociales">
+        <h2 class="section-title reveal">Síguenos</h2>
+        <div class="stats-grid">
+            <a class="stat" href="https://www.facebook.com" target="_blank" rel="noopener" data-target="1200"
+                aria-label="Facebook">
+                <img src="/assets/img/logos/facebook.png" alt="">
+                <span class="count">0</span>
+                <small>Facebook</small>
+            </a>
+            <a class="stat" href="https://www.instagram.com" target="_blank" rel="noopener" data-target="2750"
+                aria-label="Instagram">
+                <img src="/assets/img/logos/instagram.png" alt="">
+                <span class="count">0</span>
+                <small>Instagram</small>
+            </a>
+            <a class="stat" href="https://www.tiktok.com" target="_blank" rel="noopener" data-target="980"
+                aria-label="TikTok">
+                <img src="/assets/img/logos/tiktok.png" alt="">
+                <span class="count">0</span>
+                <small>TikTok</small>
+            </a>
+        </div>
     </section>
+    </main>
 
-    <!-- Grid de catálogo -->
-    <section id="catalogGrid" class="catalog-grid" aria-live="polite">
-      <!-- EJEMPLOS. Duplica/edita con tus imágenes -->
-      <a class="cat-card wm" data-title="Arreglo con girasoles" data-cat="arreglos">
-        <img src="/assets/img/arreglos_florales/arreglo1.png" alt="Arreglo con girasoles" loading="lazy">
-        <span class="label">Arreglo con girasoles</span>
-      </a>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 La Boutique de los Detalles. Todos los derechos reservados.</p>
+    </footer>
 
-      <a class="cat-card wm" data-title="Ancheta rosa" data-cat="anchetas">
-        <img src="/assets/img/anchetas/ancheta1.png" alt="Ancheta rosa" loading="lazy">
-        <span class="label">Ancheta rosa</span>
-      </a>
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/573237444519" class="whatsapp-float" target="_blank" rel="noopener"
+        title="Escríbenos por WhatsApp">
+        <img src="assets/img/logos/whatsapp.png" alt="WhatsApp">
+    </a>
 
-      <a class="cat-card wm" data-title="Rosa eterna morada" data-cat="rosas">
-        <img src="/assets/img/rosas_eternas/rosa1.jpeg" alt="Rosa eterna morada" loading="lazy">
-        <span class="label">Rosa eterna morada</span>
-      </a>
-
-      <a class="cat-card wm" data-title="Peluche Stich" data-cat="peluches">
-        <img src="/assets/img/peluches/peluche1.png" alt="Peluche Stich" loading="lazy">
-        <span class="label">Peluche Stich</span>
-      </a>
-
-      <a class="cat-card wm" data-title="Peluche de foami panda" data-cat="foami">
-        <img src="/assets/img/peluches_foami/caja2.jpg" alt="Peluche de foami panda" loading="lazy">
-        <span class="label">Peluche de foami panda</span>
-      </a>
-
-      <a class="cat-card wm" data-title="Cajas y papel regalo" data-cat="otros">
-        <img src="/assets/img/detalles/IMG-20250725-WA0242.jpg" alt="Cajas y papel regalo" loading="lazy">
-        <span class="label">Cajas y papel regalo</span>
-      </a>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 La Boutique de los Detalles. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- Modal de imagen (mismo de la home) -->
-  <div id="modalImagen" class="modal-img" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-    <span class="close" onclick="cerrarModalImagen()" aria-label="Cerrar modal">&times;</span>
-    <div class="modal-img-content">
-      <button class="modal-nav prev" onclick="cambiarImagen(-1)" aria-label="Anterior">&#10094;</button>
-      <img id="imagenModal" alt="Producto ampliado">
-      <button class="modal-nav next" onclick="cambiarImagen(1)" aria-label="Siguiente">&#10095;</button>
+    <!-- Modal de imagen (mismo de la home) -->
+    <div id="modalImagen" class="modal-img" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+        <span class="close" onclick="cerrarModalImagen()" aria-label="Cerrar modal">&times;</span>
+        <div class="modal-img-content">
+            <button class="modal-nav prev" onclick="cambiarImagen(-1)" aria-label="Anterior">&#10094;</button>
+            <img id="imagenModal" alt="Producto ampliado">
+            <button class="modal-nav next" onclick="cambiarImagen(1)" aria-label="Siguiente">&#10095;</button>
+        </div>
     </div>
-  </div>
 
-  <script src="/js/index.js"></script>
+    <script src="/js/index.js"></script>
 </body>
+
 </html>

@@ -151,12 +151,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById("modalImagen");
     if (e.target === modal) window.cerrarModalImagen();
   });
-  /* ===== Catálogo: filtros + lightbox ===== */
+  /* ===== Catálogo desde JSON ===== */
   const grid = document.getElementById('catalogGrid');
   if (grid) {
-    const cards = Array.from(grid.querySelectorAll('.cat-card'));
     const input = document.getElementById('catSearch');
     const sel = document.getElementById('catFilter');
+    let productos = [];
+    let cards = [];
+
+    fetch('/json/productos.json')
+      .then(r => r.json())
+      .then(data => {
+        productos = data;
+        render(data);
+        hookClicks();
+        applyFilters();
+      })
+      .catch(err => console.error('Error cargando productos.json', err));
+
+    function render(items) {
+      grid.innerHTML = items.map(p => {
+        const img = (p.imagenes && p.imagenes[0]) || '';
+        const tit = (p.titulo || '').replace(/"/g, '&quot;');
+        return `
+          <a class="cat-card wm" data-title="${tit}" data-cat="${p.categoria}" data-id="${p.id}">
+            <img src="${img}" alt="${tit}" loading="lazy">
+            <span class="label">${tit}</span>
+          </a>`;
+      }).join('');
+      cards = Array.from(grid.querySelectorAll('.cat-card'));
+    }
 
     function applyFilters() {
       const q = (input?.value || '').trim().toLowerCase();
@@ -172,24 +196,32 @@ document.addEventListener('DOMContentLoaded', () => {
     input?.addEventListener('input', applyFilters);
     sel?.addEventListener('change', applyFilters);
 
-    // Abrir modal al hacer click en la tarjeta
+    // Lightbox usando el mismo modal
     let currentIndex = 0;
-    function currentImages() {
-      // solo las visibles para poder navegar por el filtro aplicado
-      return cards.filter(c => !c.classList.contains('hide')).map(c => c.querySelector('img'));
-    }
-    cards.forEach((card, idx) => {
-      card.addEventListener('click', () => {
-        const imgs = currentImages();
-        currentIndex = imgs.indexOf(card.querySelector('img'));
-        if (currentIndex < 0) currentIndex = 0;
-        mostrarImagenModal(imgs[currentIndex].src);
-        // guarda la lista visible para navegación
-        window.__catalogImgs = imgs;
-      });
-    });
+    function visibles() { return cards.filter(c => !c.classList.contains('hide')); }
 
-    // Reutiliza la navegación del modal
+    function hookClicks() {
+      grid.addEventListener('click', (e) => {
+        const card = e.target.closest('.cat-card');
+        if (!card) return;
+        const id = card.getAttribute('data-id');
+        const lista = visibles();
+        // construyo lista de imágenes visibles (una por card)
+        window.__catalogImgs = lista.map(c => c.querySelector('img'));
+        currentIndex = lista.indexOf(card);
+        const p = productos.find(x => x.id === id);
+        if (p && p.imagenes && p.imagenes.length > 1) {
+          // si ese producto tiene varias imágenes, usa esas para navegar
+          window.__catalogImgs = p.imagenes.map(src => {
+            const tmp = new Image(); tmp.src = src; return tmp;
+          });
+          currentIndex = 0;
+        }
+        mostrarImagenModal(window.__catalogImgs[currentIndex].src);
+      });
+    }
+
+    // Navegación del modal con la lista activa
     const oldCambiar = window.cambiarImagen;
     window.cambiarImagen = dir => {
       if (Array.isArray(window.__catalogImgs) && window.__catalogImgs.length) {
@@ -199,8 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
         oldCambiar(dir);
       }
     };
-
-    applyFilters();
   }
 
 });
