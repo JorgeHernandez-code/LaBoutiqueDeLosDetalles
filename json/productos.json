@@ -1,10 +1,46 @@
 [
     {
         "id": "arr-001",
-        "titulo": "Arreglo con girasoles",
+        "titulo": "Arreglo con rosas azules",
         "categoria": "arreglos",
         "imagenes": [
             "assets/img/arreglos_florales/arreglo1.png"
+        ],
+        "tags": [
+            "rosas",
+            "flores"
+        ]
+    },
+    {
+        "id": "arr-002",
+        "titulo": "Arreglo con rosas rosas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo2.png"
+        ],
+        "tags": [
+            "rosas",
+            "flores"
+        ]
+    },
+    {
+        "id": "arr-003",
+        "titulo": "Arreglo con rosas rojas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo3.png"
+        ],
+        "tags": [
+            "rosas",
+            "flores"
+        ]
+    },
+    {
+        "id": "arr-004",
+        "titulo": "Arreglo con girasol",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo4.png"
         ],
         "tags": [
             "flores",
@@ -12,8 +48,292 @@
         ]
     },
     {
+        "id": "arr-005",
+        "titulo": "Arreglo con girasoles feliz cumple",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo5.png"
+        ],
+        "tags": [
+            "flores",
+            "girasoles"
+        ]
+    },
+    {
+        "id": "arr-006",
+        "titulo": "Arreglo con rosas rojas y girasol",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo6.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas",
+            "girasoles"
+        ]
+    },
+    {
+        "id": "arr-007",
+        "titulo": "Arreglo con flores y girasol",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo7.png"
+        ],
+        "tags": [
+            "flores",
+            "girasoles"
+        ]
+    },
+    {
+        "id": "arr-008",
+        "titulo": "Arreglo con girasoles y rosas, osito",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo8.png"
+        ],
+        "tags": [
+            "flores",
+            "peluches",
+            "girasoles"
+        ]
+    },
+    {
+        "id": "arr-009",
+        "titulo": "Arreglo con girasoles",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo9.png"
+        ],
+        "tags": [
+            "flores",
+            "girasoles"
+        ]
+    },
+    {
+        "id": "arr-010",
+        "titulo": "Arreglo con flores girasol",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo10.png"
+        ],
+        "tags": [
+            "flores",
+            "girasoles"
+        ]
+    },
+    {
+        "id": "arr-011",
+        "titulo": "Arreglo con rosas rojas y decoración",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo11.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-012",
+        "titulo": "Arreglo con rosas moradas y rosas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo12.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-013",
+        "titulo": "Arreglo grande de con rosas rojas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo13.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-014",
+        "titulo": "Arreglo con grande con rosas rojas y peluche",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo14.png"
+        ],
+        "tags": [
+            "flores",
+            "peluches",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-015",
+        "titulo": "Arreglo con rosas y girasoles",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo15.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas",
+            "girasoles"
+        ]
+    },
+    {
+        "id": "arr-016",
+        "titulo": "Arreglo con rosas rojas grande",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo16.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-017",
+        "titulo": "Arreglo con rosas y flores rosas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo17.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-018",
+        "titulo": "Arreglo con rosas azules y rojas,Barcelona",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo18.png"
+        ],
+        "tags": [
+            "flores",
+            "futbol",
+            "azules"
+        ]
+    },
+    {
+        "id": "arr-019",
+        "titulo": "Arreglo con rosas rosadas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo19.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-020",
+        "titulo": "Arreglo con rosas palo rosa",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo20.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-021",
+        "titulo": "Arreglo con rosas celestes",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo21.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-022",
+        "titulo": "Arreglo con rosas azules monster inc",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo22.png"
+        ],
+        "tags": [
+            "flores",
+            "peluches",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-023",
+        "titulo": "Arreglo con rosas fucsias y rosas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo23.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-024",
+        "titulo": "Arreglo con rosas amarillas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo24.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-025",
+        "titulo": "Arreglo con rosas turquesa",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo25.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-026",
+        "titulo": "Arreglo con rosas moradas y lilas",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo26.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas"
+        ]
+    },
+    {
+        "id": "arr-027",
+        "titulo": "Arreglo con rosas y girasoles grande",
+        "categoria": "arreglos",
+        "imagenes": [
+            "assets/img/arreglos_florales/arreglo27.png"
+        ],
+        "tags": [
+            "flores",
+            "rosas",
+            "girasoles"
+        ]
+    },
+    
+    {
         "id": "anc-001",
-        "titulo": "Ancheta rosa",
+        "titulo": "Ancheta cerdito rosa",
         "categoria": "anchetas",
         "imagenes": [
             "assets/img/anchetas/ancheta1.png"
@@ -24,20 +344,299 @@
         ]
     },
     {
+        "id": "anc-002",
+        "titulo": "Ancheta osito corazón",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta2.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-003",
+        "titulo": "Ancheta kuromi",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta3.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-004",
+        "titulo": "Ancheta Stitch feliz día",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta4.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-005",
+        "titulo": "Ancheta PAW Patrol",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta5.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-006",
+        "titulo": "Ancheta Hello Kitty feliz día",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta6.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-007",
+        "titulo": "Ancheta Gardfield",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta7.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-008",
+        "titulo": "Ancheta león",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta8.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-009",
+        "titulo": "Ancheta Ángel",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta9.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-010",
+        "titulo": "Ancheta Hello Kitty blue feliz cumple",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta10.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-011",
+        "titulo": "Ancheta Stitch Feliz cumpleaños",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta11.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-012",
+        "titulo": "Ancheta Kuromi caja",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta12.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-013",
+        "titulo": "Ancheta isito feliz día",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta13.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-014",
+        "titulo": "Ancheta Stitch kiss",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta14.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-015",
+        "titulo": "Ancheta Osito caja",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta15.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-016",
+        "titulo": "Ancheta cerdito corona",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta16.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-017",
+        "titulo": "Ancheta Sony",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta17.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-018",
+        "titulo": "Ancheta Up",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta18.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
+        "id": "anc-019",
+        "titulo": "Ancheta Osito feliz cumple",
+        "categoria": "anchetas",
+        "imagenes": [
+            "assets/img/anchetas/ancheta19.png"
+        ],
+        "tags": [
+            "cumpleaños",
+            "dulces"
+        ]
+    },
+    {
         "id": "ros-001",
-        "titulo": "Rosa eterna morada",
+        "titulo": "Rosas eternas morada, dorada, lila y amarilla",
         "categoria": "rosas",
         "imagenes": [
-            "assets/img/rosas_eternas/rosa1.jpeg",
-            "assets/img/rosas_eternas/rosa2.jpeg"
+            "assets/img/rosas_eternas/rosa1.png"
+        ]
+    },
+    {
+        "id": "ros-002",
+        "titulo": "Rosa eterna lila",
+        "categoria": "rosas",
+        "imagenes": [
+            "assets/img/rosas_eternas/rosa2.png"
+        ]
+    },
+    {
+        "id": "ros-003",
+        "titulo": "Rosas eternas fucsia, azul y rosa",
+        "categoria": "rosas",
+        "imagenes": [
+            "assets/img/rosas_eternas/rosa3.png"
+        ]
+    },
+    {
+        "id": "ros-004",
+        "titulo": "Rosa eterna blanca",
+        "categoria": "rosas",
+        "imagenes": [
+            "assets/img/rosas_eternas/rosa4.png"
+        ]
+    },
+    {
+        "id": "ros-005",
+        "titulo": "Rosa eterna dorada",
+        "categoria": "rosas",
+        "imagenes": [
+            "assets/img/rosas_eternas/rosa5.png"
         ]
     },
     {
         "id": "pel-001",
-        "titulo": "Peluche Stitch",
+        "titulo": "Peluches de lucider",
         "categoria": "peluches",
         "imagenes": [
             "assets/img/peluches/peluche1.png"
+        ]
+    },
+    {
+        "id": "pel-002",
+        "titulo": "Peluche de snoopy",
+        "categoria": "peluches",
+        "imagenes": [
+            "assets/img/peluches/peluche2.png"
+        ]
+    },
+    {
+        "id": "pel-003",
+        "titulo": "Peluche de snoopy saco rojo",
+        "categoria": "peluches",
+        "imagenes": [
+            "assets/img/peluches/peluche3.png"
+        ]
+    },
+    {
+        "id": "pel-004",
+        "titulo": "Peluches de winny pooh",
+        "categoria": "peluches",
+        "imagenes": [
+            "assets/img/peluches/peluche4.png"
+        ]
+    },
+    {
+        "id": "pel-005",
+        "titulo": "Peluches de las chicas super poderosas",
+        "categoria": "peluches",
+        "imagenes": [
+            "assets/img/peluches/peluche5.png"
         ]
     },
     {
@@ -45,15 +644,56 @@
         "titulo": "Peluche de foami panda",
         "categoria": "foami",
         "imagenes": [
-            "assets/img/peluches_foami/caja2.jpg"
+            "assets/img/peluches_foami/caja1.png",
+            "assets/img/peluches_foami/caja2.png"
         ]
     },
     {
-        "id": "otr-001",
-        "titulo": "Cajas y papel regalo",
-        "categoria": "otros",
+        "id": "foa-002",
+        "titulo": "Peluche de foami conejo fucsia",
+        "categoria": "foami",
         "imagenes": [
-            "assets/img/detalles/IMG-20250725-WA0242.jpg"
+            "assets/img/peluches_foami/caja3.png"
+        ]
+    },
+    {
+        "id": "foa-003",
+        "titulo": "Peluche de foami Hello Kitty",
+        "categoria": "foami",
+        "imagenes": [
+            "assets/img/peluches_foami/caja4.png"
+        ]
+    },
+    {
+        "id": "foa-004",
+        "titulo": "Peluche de foami oso blanco corazón",
+        "categoria": "foami",
+        "imagenes": [
+            "assets/img/peluches_foami/caja5.png"
+        ]
+    },
+    {
+        "id": "foa-005",
+        "titulo": "Peluche de foami bicolor rosa-morado",
+        "categoria": "foami",
+        "imagenes": [
+            "assets/img/peluches_foami/caja6.png"
+        ]
+    },
+    {
+        "id": "foa-006",
+        "titulo": "Peluche de foami bicolor azul-blanco",
+        "categoria": "foami",
+        "imagenes": [
+            "assets/img/peluches_foami/caja7.png"
+        ]
+    },
+    {
+        "id": "foa-007",
+        "titulo": "Peluche de foami Winnie Pooh",
+        "categoria": "foami",
+        "imagenes": [
+            "assets/img/peluches_foami/caja8.png"
         ]
     }
 ]

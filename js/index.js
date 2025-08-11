@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.2 });
   document.querySelectorAll('.reveal').forEach(el => revObserver.observe(el));
 
-  /* Sliders de tarjetas */
+  /* Sliders de tarjetas (rotación automática) */
   document.querySelectorAll('.product-slider').forEach(slider => {
     const images = slider.querySelectorAll('img');
     if (!images.length) return;
@@ -116,47 +116,77 @@ document.addEventListener('DOMContentLoaded', () => {
     header.classList.toggle('shrink', window.scrollY > 50);
   });
 
-  /* Modal imagen (home) */
-  let currentIndex = 0, currentSlider = [];
-  document.querySelectorAll(".product-card").forEach(card => {
-    card.addEventListener("click", () => {
-      const imgs = card.querySelectorAll("img");
+  /* ===== Lightbox / Modal imagen ===== */
+  let currentIndex = 0, currentSlider = [], keyHandlerAttached = false;
+
+  // Abrir solo para product-cards que NO son .extra-card
+  document.querySelectorAll('.product-card:not(.extra-card)').forEach(card => {
+    card.addEventListener('click', () => {
+      const imgs = card.querySelectorAll('.product-slider img');
       if (!imgs.length) return;
       currentSlider = Array.from(imgs);
-      const active = card.querySelector("img.active") || imgs[0];
+      const active = card.querySelector('img.active') || imgs[0];
       currentIndex = currentSlider.indexOf(active);
       mostrarImagenModal(currentSlider[currentIndex].src);
+
+      // Título opcional desde data-title
+      const title = card.getAttribute('data-title');
+      if (title) document.getElementById('modalImagen').setAttribute('aria-label', title);
     });
   });
 
   window.mostrarImagenModal = (src) => {
-    const modal = document.getElementById("modalImagen");
-    const img = document.getElementById("imagenModal");
+    const modal = document.getElementById('modalImagen');
+    const img = document.getElementById('imagenModal');
     img.src = src;
-    modal.style.display = "flex";
-    modal.classList.add("show");
+    modal.style.display = 'flex';
+    modal.classList.add('show');
     document.body.classList.add('modal-open');
+
+    // Teclado: ← → Esc
+    if (!keyHandlerAttached) {
+      keyHandlerAttached = true;
+      window.addEventListener('keydown', keyHandler);
+    }
   };
 
+  function keyHandler(e) {
+    const open = document.getElementById('modalImagen').classList.contains('show');
+    if (!open) return;
+    if (e.key === 'ArrowLeft') cambiarImagen(-1);
+    if (e.key === 'ArrowRight') cambiarImagen(1);
+    if (e.key === 'Escape') cerrarModalImagen();
+  }
+
   window.cerrarModalImagen = () => {
-    const modal = document.getElementById("modalImagen");
-    const img = document.getElementById("imagenModal");
-    modal.classList.remove("show");
+    const modal = document.getElementById('modalImagen');
+    const img = document.getElementById('imagenModal');
+    modal.classList.remove('show');
     setTimeout(() => {
-      modal.style.display = "none";
-      img.removeAttribute("src");
+      modal.style.display = 'none';
+      img.removeAttribute('src');
       document.body.classList.remove('modal-open');
     }, 400);
   };
 
   window.cambiarImagen = dir => {
-    if (!currentSlider.length) return;
+  // Si hay imágenes cargadas en el slider actual
+  if (Array.isArray(currentSlider) && currentSlider.length) {
     currentIndex = (currentIndex + dir + currentSlider.length) % currentSlider.length;
-    document.getElementById("imagenModal").src = currentSlider[currentIndex].src;
-  };
+    document.getElementById('imagenModal').src = currentSlider[currentIndex].src;
+    return;
+  }
 
-  window.addEventListener("click", e => {
-    const modal = document.getElementById("modalImagen");
+  // Si estamos en el catálogo
+  if (Array.isArray(window.__catalogImgs) && window.__catalogImgs.length) {
+    catIndex = (catIndex + dir + window.__catalogImgs.length) % window.__catalogImgs.length;
+    document.getElementById('imagenModal').src = window.__catalogImgs[catIndex].src;
+  }
+};
+
+  // Cerrar al hacer clic fuera
+  window.addEventListener('click', e => {
+    const modal = document.getElementById('modalImagen');
     if (e.target === modal) window.cerrarModalImagen();
   });
 
@@ -168,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let productos = [];
     let cards = [];
 
-    fetch('json/productos.json')   // <- sin "/" para funcionar con <base>
+    fetch('json/productos.json')
       .then(r => r.json())
       .then(data => {
         productos = data;
@@ -205,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     input?.addEventListener('input', applyFilters);
     sel?.addEventListener('change', applyFilters);
 
-    // Lightbox desde catálogo
+    // Lightbox desde catálogo (mantiene flechas)
     let catIndex = 0;
     function visibles() { return cards.filter(c => !c.classList.contains('hide')); }
 
@@ -238,11 +268,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 });
+
 /* Menú móvil */
-function toggleMenu() { document.getElementById("mainMenu").classList.toggle("show"); }
+function toggleMenu() { document.getElementById('mainMenu').classList.toggle('show'); }
 /* (Opcional) Modal extra */
-function abrirModal() { const el = document.getElementById("modalInsumos"); if (el) el.style.display = "block"; }
-function cerrarModal() { const el = document.getElementById("modalInsumos"); if (el) el.style.display = "none"; }
+function abrirModal() { const el = document.getElementById('modalInsumos'); if (el) el.style.display = 'block'; }
+function cerrarModal() { const el = document.getElementById('modalInsumos'); if (el) el.style.display = 'none'; }
 /* Desplazamiento suave con offset del header */
 const HEADER_OFFSET = 140;
 document.querySelectorAll('a[href^="#"]').forEach(link => {
