@@ -79,6 +79,7 @@ nav a:hover {
   color: #9e7a34;
 }
 
+/* línea dorada bajo el link */
 nav a::after {
   content: "";
   position: absolute;
@@ -96,7 +97,7 @@ nav a.is-active::after {
   width: 100%;
 }
 
-/* ===== Banner ===== */
+/* ===== Banner limpio y legible ===== */
 .banner {
   position: relative;
   width: 100%;
@@ -104,6 +105,7 @@ nav a.is-active::after {
   overflow: hidden;
 }
 
+/* Fondo difuminado (se actualiza desde JS con la imagen activa) */
 .banner::before {
   content: "";
   position: absolute;
@@ -111,18 +113,31 @@ nav a.is-active::after {
   z-index: 0;
   background-image: var(--banner-bg, url("../assets/img/banner/Banner2.png"));
   background-size: cover;
-  background-position: center;
-  filter: blur(12px) brightness(.78);
-  opacity: .9;
-  transition: transform .6s ease, background-image .3s ease;
+  background-position: center 35%;
+  filter: blur(14px) brightness(.65) saturate(.95);
+  opacity: .95;
   transform: translateY(var(--parallax, 0));
+  transition: transform .6s ease, background-image .3s ease, opacity .3s ease;
 }
 
+/* Capa extra para oscurecer y bajar ruido visual */
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(80% 60% at 50% 45%, rgba(0, 0, 0, .10) 0%, rgba(0, 0, 0, .28) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, .22) 0%, rgba(0, 0, 0, .30) 100%);
+  pointer-events: none;
+}
+
+/* Slides */
 .slider,
 .slide {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .slide {
@@ -134,16 +149,21 @@ nav a.is-active::after {
   opacity: 1;
 }
 
+/* Imagen del hero */
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 35%;
+  filter: brightness(.62) contrast(1.05) saturate(.96);
+  transform: scale(1.02);
 }
 
+/* Contenido encima */
 .banner-overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,14 +171,13 @@ nav a.is-active::after {
   text-align: center;
   color: #fff;
   padding: 20px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, .30) 0%, rgba(0, 0, 0, .22) 40%, rgba(0, 0, 0, .30) 100%);
   pointer-events: none;
 }
 
 .banner-overlay h2 {
   font-size: clamp(22px, 3.2vw, 34px);
-  margin: 0 0 20px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, .45);
+  margin: 0 0 18px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
   opacity: 0;
   transform: translateY(18px);
   animation: fadeUp .9s ease forwards .25s;
@@ -166,39 +185,43 @@ nav a.is-active::after {
 
 .banner-cta {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .banner-btn {
-  background: #ee7ae8;
-  color: #fff;
+  background: #D4AF37;
+  color: #3B2F2F;
   text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 30px;
+  padding: 12px 22px;
+  border-radius: 28px;
   font-weight: 700;
   font-size: 18px;
-  transition: background .25s;
+  border: 1.5px solid rgba(255, 255, 255, .8);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
+  transition: transform .15s, box-shadow .2s, background .25s;
   pointer-events: auto;
   opacity: 0;
   transform: translateY(18px);
   animation: fadeUp .9s ease forwards .45s;
-  border: #fff 2px solid;
 }
 
 .banner-btn:hover {
-  background: #c24bda;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .28);
+  background: #F0D879;
 }
 
 .banner-btn.secondary {
-  background: #25D366;
+  background: #56ec8f;
 }
 
 .banner-btn.secondary:hover {
   background: #1cbc5c;
 }
 
+/* Curva decorativa del banner */
 .curve {
   position: absolute;
   left: 0;
@@ -218,6 +241,22 @@ nav a.is-active::after {
   height: 110px;
 }
 
+/* Responsive compacto banner */
+@media (max-width:768px) {
+  .banner {
+    height: 300px;
+  }
+
+  .slide img {
+    object-position: center 38%;
+  }
+
+  .banner-btn {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+}
+
 /* ===== Animaciones ===== */
 @keyframes fadeUp {
   from {
@@ -229,14 +268,6 @@ nav a.is-active::after {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
-
-.reveal {
-  opacity: 0;
-}
-
-.is-visible {
-  animation: fadeUp .7s ease forwards;
 }
 
 /* ===== Main ===== */
@@ -321,7 +352,6 @@ nav a.is-active::after {
   box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
 }
 
-/* FRAME cuadrado y contenido completo centrado */
 .product-slider {
   position: relative;
   aspect-ratio: 1/1;
@@ -365,14 +395,14 @@ nav a.is-active::after {
   margin-bottom: 10px;
 }
 
-/* ===== Marca de agua en las TARJETAS ===== */
+/* ===== Marca de agua TARJETAS ===== */
 .product-card.wm::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  background-image: url("assets/img/logos/Logo.png");
+  background-image: url("../assets/img/logos/Logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 85%;
@@ -385,7 +415,7 @@ nav a.is-active::after {
   z-index: 2;
 }
 
-/* ===== Marca de agua EN EL MODAL ===== */
+/* ===== Modal imagen ===== */
 .modal-img-content {
   position: relative;
 }
@@ -396,7 +426,7 @@ nav a.is-active::after {
   inset: 0;
   z-index: 3;
   pointer-events: none;
-  background-image: url("assets/img/logos/Logo.png");
+  background-image: url("../assets/img/logos/Logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: min(70vmin, 900px);
@@ -566,7 +596,7 @@ footer {
   transform: translateY(0);
 }
 
-/* ===== Modal imagen ===== */
+/* ===== Modal imagen overlay ===== */
 .modal-img {
   display: none;
   position: fixed;
@@ -595,6 +625,8 @@ footer {
   font-weight: 700;
   cursor: pointer;
   z-index: 10001;
+  background: none;
+  border: 0;
 }
 
 .modal-img-content {
@@ -726,7 +758,7 @@ body.splash-lock {
   }
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive nav ===== */
 @media (max-width:768px) {
   .navbar {
     padding: 0 15px;
@@ -763,7 +795,7 @@ body.splash-lock {
   }
 }
 
-/* ===== Catálogo (sin cambios visuales importantes) ===== */
+/* ===== Catálogo ===== */
 .catalog .section-title {
   margin-top: 10px;
 }
@@ -835,7 +867,7 @@ body.splash-lock {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: transform .2s, box-shadow .2s;
 }
 
 .cat-card:hover {
@@ -854,6 +886,8 @@ body.splash-lock {
   font-size: 18px;
   padding: 0 12px 12px;
   color: #d36c4a;
+  display: block;
+  text-align: center;
 }
 
 .cat-card.hide {
@@ -874,6 +908,7 @@ body.splash-lock {
   mix-blend-mode: multiply;
 }
 
+/* Tipografía de controles */
 input,
 select,
 button,
@@ -883,22 +918,7 @@ option,
   font-family: 'Dancing Script', cursive;
 }
 
-#catSearch,
-#catFilter {
-  font-size: 18px;
-  border: 1px solid #f1c27d;
-  border-radius: 12px;
-  padding: 10px 14px;
-}
-
-.cat-card .label {
-  display: block;
-  text-align: center;
-  color: #d36c4a;
-  font-size: 20px;
-}
-
-/* ===== Splash catálogo ===== */
+/* Splash catálogo */
 .splash {
   position: fixed;
   top: 0;
@@ -934,7 +954,7 @@ option,
   pointer-events: none;
 }
 
-/* ===== Banner compacto mobile ===== */
+/* Banner compacto mobile extra */
 @media (max-width:768px) {
   .banner {
     height: 280px;

@@ -5,41 +5,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Boutique de los Detalles</title>
-
-  <!-- Base dinámico: local (/) y GitHub Pages (/LaBoutiqueDeLosDetalles/) -->
-  <script>
-    (function () {
-      var base = document.createElement('base');
-      base.href = location.hostname.includes('github.io')
-        ? '/LaBoutiqueDeLosDetalles/'
-        : '/';
-      document.head.prepend(base);
-    })();
-  </script>
-
+  <script> (function () { var base = document.createElement('base'); base.href = location.hostname.includes('github.io') ? '/LaBoutiqueDeLosDetalles/' : '/'; document.head.prepend(base); })(); </script>
   <link rel="icon" href="assets/img/logos/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <script>
+  (function () {
+    var base = document.createElement('base');
+    base.href = location.hostname.includes('github.io')
+      ? '/LaBoutiqueDeLosDetalles/'
+      : '/';
+    document.head.prepend(base);
+  })();
+</script>
+
 </head>
 
-<body>
-  <!-- Splash -->
+<body> <!-- Splash -->
   <div id="splash" aria-hidden="true">
-    <div class="splash-inner">
-      <img src="assets/img/logos/Logo.png" alt="" role="presentation">
+    <div class="splash-inner"> <img src="assets/img/logos/Logo.png" alt="" role="presentation">
       <h1 id="splashLine"></h1>
     </div>
-  </div>
-
-  <!-- Header -->
+  </div> <!-- Header -->
   <header>
-    <div class="navbar">
-      <a href="#inicio" class="logo-link">
-        <img src="assets/img/logos/Logo.png" alt="Logo Boutique" class="logo-img">
-      </a>
-
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <div class="navbar"> <a href="#inicio" class="logo-link" aria-label="Ir al inicio"> <img
+          src="assets/img/logos/Logo.png" alt="Logo La Boutique de los Detalles" class="logo-img"> </a> <button
+        class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú" aria-controls="mainMenu"
+        aria-expanded="false">☰</button>
 
       <nav id="mainMenu" aria-label="Principal">
         <ul>
@@ -49,41 +42,34 @@
         </ul>
       </nav>
     </div>
-  </header>
-
-  <!-- Banner -->
+  </header> <!-- Banner -->
   <section id="inicio" class="banner" aria-label="Banner principal">
-    <div class="slider">
-      <div class="slide active"><img src="assets/img/banner/Banner2.png" alt="Bienvenida"></div>
+    <div class="slider" aria-hidden="true">
+      <div class="slide active"><img src="assets/img/banner/Banner5.png" alt="Bienvenida"></div>
       <div class="slide"><img src="assets/img/banner/Banner3.png" alt="Boutique Logo Dorado"></div>
     </div>
-
     <div class="banner-overlay">
       <h2>Detalles pensados para cada ocasión</h2>
       <div class="banner-cta">
         <a href="html/catalogo.html" class="banner-btn">Ver Catálogo</a>
-        <a href="https://wa.me/573237444519" target="_blank" rel="noopener" class="banner-btn secondary">WhatsApp</a>
+        <a href="https://wa.me/573237444519" target="_blank" rel="noopener noreferrer"
+          class="banner-btn secondary">WhatsApp</a>
       </div>
     </div>
 
-    <!-- Curva inferior -->
     <div class="curve curve-bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,50 C360,100 1080,0 1440,50" fill="none" stroke="#D4AF37" stroke-width="6"></path>
-        <path d="M0,50 C360,100 1080,0 1440,50 L1440,120 L0,120 Z" fill="#ffffff"></path>
-      </svg>
-    </div>
-  </section>
-
-  <!-- Main -->
-  <main class="main-content">
-    <!-- Productos -->
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path d="M0,50 C360,100 1080,0 1440,50" fill="none" stroke="#D4AF37" stroke-width="6"></path>
+    <path d="M0,50 C360,100 1080,0 1440,50 L1440,120 L0,120 Z" fill="#fffaf8"></path>
+  </svg>
+</div>
+  </section> <!-- Main -->
+  <main class="main-content"> <!-- Productos -->
     <section id="productos" class="service-section" data-animate aria-label="Nuestros productos">
       <h2 class="section-title reveal">Nuestros Productos</h2>
-
       <div class="product-grid">
         <!-- Arreglos florales -->
-        <article class="product-card wm" data-title="Arreglos Florales">
+        <article class="product-card wm" data-title="Arreglos Florales" tabindex="0">
           <div class="product-slider">
             <img src="assets/img/arreglos_florales/arreglo1.png" class="active" alt="Arreglo Floral 1" loading="lazy">
             <img src="assets/img/arreglos_florales/arreglo2.png" alt="Arreglo Floral 2" loading="lazy">
@@ -93,7 +79,7 @@
         </article>
 
         <!-- Anchetas -->
-        <article class="product-card wm" data-title="Anchetas Personalizadas">
+        <article class="product-card wm" data-title="Anchetas Personalizadas" tabindex="0">
           <div class="product-slider">
             <img src="assets/img/anchetas/ancheta1.png" class="active" alt="Ancheta 1" loading="lazy">
             <img src="assets/img/anchetas/ancheta2.png" alt="Ancheta 2" loading="lazy">
@@ -103,7 +89,7 @@
         </article>
 
         <!-- Rosas Inmortalizadas -->
-        <article class="product-card wm" data-title="Rosas Inmortalizadas">
+        <article class="product-card wm" data-title="Rosas Inmortalizadas" tabindex="0">
           <div class="product-slider">
             <img src="assets/img/rosas_eternas/rosa1.png" class="active" alt="Rosa eterna 1" loading="lazy">
             <img src="assets/img/rosas_eternas/rosa2.png" alt="Rosa eterna 2" loading="lazy">
@@ -113,7 +99,7 @@
         </article>
 
         <!-- Peluches -->
-        <article class="product-card wm" data-title="Peluches">
+        <article class="product-card wm" data-title="Peluches" tabindex="0">
           <div class="product-slider">
             <img src="assets/img/peluches/peluche1.png" class="active" alt="Peluche 1" loading="lazy">
             <img src="assets/img/peluches/peluche4.png" alt="Peluche 2" loading="lazy">
@@ -123,7 +109,7 @@
         </article>
 
         <!-- Peluches de Foami -->
-        <article class="product-card wm" data-title="Peluches de Foami">
+        <article class="product-card wm" data-title="Peluches de Foami" tabindex="0">
           <div class="product-slider">
             <img src="assets/img/peluches_foami/caja1.png" class="active" alt="Foami 1" loading="lazy">
             <img src="assets/img/peluches_foami/caja3.png" alt="Foami 2" loading="lazy">
@@ -132,7 +118,7 @@
           <p>Peluches de Foami</p>
         </article>
 
-        <!-- Extra (no abre lightbox de galería) -->
+        <!-- Extra -->
         <article class="product-card wm extra-card" onclick="abrirModal()">
           <img src="assets/img/detalles/IMG-20250725-WA0242.jpg" alt="Insumos" class="single-img" loading="lazy">
           <p>También vendemos cajas, papel regalo y más...</p>
@@ -144,8 +130,8 @@
     <section id="contacto" class="contact-section" data-animate aria-label="Contacto">
       <h2 class="section-title reveal">Contáctanos</h2>
 
-      <p><strong>Teléfono:</strong> <a href="https://wa.me/573237444519" target="_blank" rel="noopener">+57 318
-          3071536</a></p>
+      <p><strong>Teléfono:</strong> <a href="https://wa.me/573237444519" target="_blank" rel="noopener noreferrer">+57
+          323 744 4519</a></p>
       <p><strong>Email:</strong> <a
           href="mailto:laboutiquedelosdetallesinfo@gmail.com">laboutiquedelosdetallesinfo@gmail.com</a></p>
       <p><strong>Dirección:</strong> Calle 66 78L 15 sur, Bosa San Pablo, Bogotá</p>
@@ -153,27 +139,27 @@
       <div class="map-container">
         <iframe src="https://www.google.com/maps?q=Calle+66+78L+15+sur,+Bosa+San+Pablo,+Bogotá&output=embed"
           width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+          referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación"></iframe>
       </div>
     </section>
 
-    <!-- Síguenos (contadores) -->
+    <!-- Síguenos -->
     <section id="redes" class="social-stats" data-animate aria-label="Redes sociales">
       <h2 class="section-title reveal">Síguenos</h2>
       <div class="stats-grid">
-        <a class="stat" href="https://www.facebook.com" target="_blank" rel="noopener" data-target="1200"
+        <a class="stat" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" data-target="1200"
           aria-label="Facebook">
           <img src="assets/img/logos/facebook.png" alt="">
           <span class="count">0</span>
           <small>Facebook</small>
         </a>
-        <a class="stat" href="https://www.instagram.com" target="_blank" rel="noopener" data-target="2750"
+        <a class="stat" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" data-target="2750"
           aria-label="Instagram">
           <img src="assets/img/logos/instagram.png" alt="">
           <span class="count">0</span>
           <small>Instagram</small>
         </a>
-        <a class="stat" href="https://www.tiktok.com" target="_blank" rel="noopener" data-target="980"
+        <a class="stat" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" data-target="980"
           aria-label="TikTok">
           <img src="assets/img/logos/tiktok.png" alt="">
           <span class="count">0</span>
@@ -181,29 +167,18 @@
         </a>
       </div>
     </section>
-  </main>
-
-  <!-- Footer -->
+  </main> <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 La Boutique de los Detalles. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/573237444519" class="whatsapp-float" target="_blank" rel="noopener"
-    title="Escríbenos por WhatsApp">
-    <img src="assets/img/logos/whatsapp.png" alt="WhatsApp">
-  </a>
-
-  <!-- Modal de imagen -->
-  <div id="modalImagen" class="modal-img" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-    <span class="close" onclick="cerrarModalImagen()" aria-label="Cerrar modal">&times;</span>
-    <div class="modal-img-content">
-      <button class="modal-nav prev" onclick="cambiarImagen(-1)" aria-label="Anterior">&#10094;</button>
-      <img id="imagenModal" alt="Producto ampliado">
-      <button class="modal-nav next" onclick="cambiarImagen(1)" aria-label="Siguiente">&#10095;</button>
-    </div>
+  </footer> <!-- WhatsApp flotante --> <a href="https://wa.me/573237444519" class="whatsapp-float" target="_blank"
+    rel="noopener noreferrer" title="Escríbenos por WhatsApp"> <img src="assets/img/logos/whatsapp.png" alt="WhatsApp">
+  </a> <!-- Modal de imagen -->
+  <div id="modalImagen" class="modal-img" role="dialog" aria-modal="true" aria-label="Imagen ampliada"> <button
+      class="close" onclick="cerrarModalImagen()" aria-label="Cerrar modal">&times;</button>
+    <div class="modal-img-content"> <button class="modal-nav prev" onclick="cambiarImagen(-1)"
+        aria-label="Anterior">&#10094;</button> <img id="imagenModal" alt="Producto ampliado"> <button
+        class="modal-nav next" onclick="cambiarImagen(1)" aria-label="Siguiente">&#10095;</button> </div>
   </div>
-
   <script src="js/index.js"></script>
 </body>
 
